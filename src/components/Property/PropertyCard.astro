@@ -5,7 +5,7 @@ const { property } = Astro.props
 
 <div class="flex flex-col justify-end bg-slate-50 rounded shadow-lg max-w-lg p-2">
   <div class="flex relative rounded aspect-photo">
-    <img class="object-cover" loading="lazy" src={`https://webservice.reapit.net/jcb/rest/properties/${property.ID}/thumbnail?ApiKey=a84a420077ea1d871c3e772e4e5f396a&Width=500`} alt="">
+    <img class="object-cover" loading="lazy" src={"property.Image[0].Filepath"} alt="">
     <p class="bg-slate-50 rounded font-medium text-lg text-jacobs absolute -top-1 -right-1 px-2 py-1">{property.Status}</p>
   </div>
   <h4 class="text-xl font-medium py-3">{property.Address1}, {property.Address2}</h4>
