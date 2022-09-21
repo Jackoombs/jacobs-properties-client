@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const res = await fetch("http://localhost:8080/properties/lettings")
+const propertyList = await res.json()
+
+export interface Property {
+	ID: string,
+	Description: string,
+	Image: Array<Image>,
+	Address1: string,
+	Address2: string,
+	Status: string,
+	PriceString: string,
+	TotalBedrooms: number,
+	Bathrooms: number
+}
+
+export interface Image {
+	Filepath: string
+} 
+---
+
+<Layout>
+
+	<h1>Welcome to Jacobs</h1>
+
+</Layout>
+	

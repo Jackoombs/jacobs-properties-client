@@ -1,0 +1,44 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Property, Image } from "../index.astro";
+
+export async function getStaticPaths() {
+  const res = await fetch("http://localhost:8080/properties")
+  const propertyList = await res.json()
+
+  return propertyList.map((property: Property) => ({
+    params: {
+      propertyID: property.ID
+    },
+    props: {
+      property
+    }
+  }))
+}
+
+const {Image, Description, Address1, Address2, PriceString, Status, TotalBedrooms} = Astro.props.property
+---
+
+<Layout>
+  <div>
+    <h3>{`${Address1} ${Address2}`}</h3>
+    <p>{Description}</p>
+    <div class="images">
+      {Image.map((image: Image) => 
+        <img src={image.Filepath} alt=""/>
+      )}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  img {
+    width: 200px;
+    height: auto;
+  }
+</style>
