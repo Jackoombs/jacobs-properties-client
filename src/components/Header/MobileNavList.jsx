@@ -5,15 +5,15 @@ const MobileNavList = ({ isOpen }) => {
   const navItems = [
     {
       text: "Buying",
-      link : "/"
+      link : "/for-sale"
     },
     {
       text: "Renting",
-      link : "/"
+      link : "/for-rent"
     },
     {
       text: "Selling",
-      link : "/for-sale"
+      link : "/"
     },
     {
       text: "Landlords",
@@ -33,7 +33,7 @@ const MobileNavList = ({ isOpen }) => {
           {navItems.map(item => (
 
             <li key={item.text} className="text-jacobs">
-              <a href={item.link} className="text-xl font-medium p-4 uppercase">
+              <a href={item.link} className="text-xl font-medium p-4">
                 {item.text}
               </a>
             </li>
