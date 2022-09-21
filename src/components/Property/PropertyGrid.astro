@@ -1,0 +1,11 @@
+---
+import { Property } from "../../pages/index.astro";
+import PropertyCard from "./PropertyCard.astro";
+const { propertyList } = Astro.props
+---
+
+<ul class=" grid gap-8 justify-center lg:grid-cols-2">
+  {propertyList.map((property: Property) => 
+    <PropertyCard property={property} />
+  )}
+</ul>

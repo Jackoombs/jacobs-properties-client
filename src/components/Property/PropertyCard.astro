@@ -1,0 +1,24 @@
+---
+import { Icon } from 'astro-icon'
+const { property } = Astro.props
+---
+
+<div class="flex flex-col justify-end bg-slate-50 rounded shadow-lg max-w-lg p-2">
+  <div class="flex relative rounded aspect-photo">
+    <img class="object-cover" src={property.Image[0].Filepath} alt="">
+    <!-- <p class="bg-slate-50 rounded font-medium text-lg text-jacobs absolute -top-1 -right-1 px-2 py-1">{property.Status}</p> -->
+  </div>
+  <h4 class="text-xl font-medium py-3">{property.Address1}, {property.Address2}</h4>
+  <div class="flex justify-between pb-3">
+    <p class="font-bold text-lg text-jacobs">{property.PriceString}</p>
+    <div class="flex gap-3">
+      <p class="flex gap-1 items-center text-lg font-medium">{property.TotalBedrooms}<Icon class="h-6" name="fluent:bed-16-filled"/></p>
+      <p class="flex gap-1 items-center text-lg font-medium">{property.Bathrooms}<Icon class="h-6" name="fa-solid:bath"/></p>
+    </div>
+  </div>
+  <a 
+    class="hidden w-full text-center font-medium border-jacobs border-[3px] rounded-sm text-jacobs px-4 py-1 text-xl 
+    self-center duration-150 lg:block lg:text-xl hover:bg-jacobs hover:text-slate-50"
+    href={`/properties/${property.ID}`}>See More
+  </a>
+</div>
