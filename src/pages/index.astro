@@ -1,9 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const res = await fetch("http://localhost:8080/properties/lettings")
-const propertyList = await res.json()
-
 export interface Property {
 	ID: string,
 	Description: string,

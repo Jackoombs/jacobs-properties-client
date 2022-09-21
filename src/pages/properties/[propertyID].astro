@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { Property, Image } from "../index.astro";
 
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost:8080/properties")
+  const res = await fetch("https://jacobs-server.onrender.com/properties")
   const propertyList = await res.json()
 
   return propertyList.map((property: Property) => ({
