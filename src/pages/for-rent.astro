@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import PropertyGrid from "../components/Property/PropertyGrid.astro";
 import PageTitle from "../components/General/PageTitle.astro";
-const res = await fetch("http://localhost:8080/properties/lettings")
+const res = await fetch("https://jacobs-server.onrender.com/properties/lettings")
 const propertyList = await res.json()
 
 ---
