@@ -1,0 +1,9 @@
+---
+import Nav from "./Nav.astro";
+import MobileNav from "./MobileNav";
+---
+
+<nav class="flex items-center">
+  <Nav />
+  <MobileNav client:load client:media="(max-width: 768px)"/>
+</nav>
