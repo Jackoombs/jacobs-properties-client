@@ -2,6 +2,18 @@
 import { Property } from "../../pages/index.astro";
 import PropertyCard from "./PropertyCard.astro";
 const { propertyList } = Astro.props
+
+propertyList.sort((a: Property, b: Property) => {
+  if (a.InternalSaleStatus === "For Sale - Available"
+  && b.InternalSaleStatus === "Under offer - Available") {
+    return -1
+  }
+  if (b.InternalSaleStatus === "For Sale - Available"
+  && a.InternalSaleStatus === "Under offer - Available") {
+    return +1
+  }
+  return 0
+})
 ---
 
 <ul class=" grid gap-8 justify-center lg:grid-cols-2">
