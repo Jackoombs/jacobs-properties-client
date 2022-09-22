@@ -1,12 +1,20 @@
 ---
 import { Icon } from 'astro-icon'
 const { property } = Astro.props
+const getStatus = () => {
+  const status = property.InternalLettingStatus || property.InternalSaleStatus 
+  if (status === "Tenancy Current - Available" || status === "For Sale - Available") {
+    return "Available"
+  } else if (status === "Under offer - Available") {
+    return "Under Offer"
+  }
+}
 ---
 
 <div class="flex flex-col justify-end bg-slate-50 rounded shadow-lg max-w-lg p-2">
-  <div class="flex relative rounded aspect-photo">
-    <img class="object-cover" loading="lazy" src={property.Image[0].Filepath} alt="">
-    <p class="bg-slate-50 rounded font-medium text-lg text-jacobs absolute -top-1 -right-1 px-2 py-1">{property.Status}</p>
+  <div class="flex relative rounded aspect-photo overflow-hidden">
+    <img class="object-cover" loading="lazy" src={`http://localhost:8080/images/${property.ID}-resized.jpg`} alt="">
+    <p class="bg-slate-50 rounded font-medium text-lg text-jacobs absolute -top-1 -right-1 px-2 py-1">{getStatus()}</p>
   </div>
   <h4 class="text-xl font-medium py-3">{property.Address1}, {property.Address2}</h4>
   <div class="flex justify-between pb-3">
