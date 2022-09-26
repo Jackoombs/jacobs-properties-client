@@ -8,18 +8,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
   background: #f8fafc;
   color: #333;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
 }
 
 li {
