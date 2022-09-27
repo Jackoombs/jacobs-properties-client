@@ -44,10 +44,12 @@ export interface Image {
 <Layout>
 
 	<section class="relative"  >
-		<div class="h-80 bg-no-repeat bg-cover bg-[right_20%_top_30%]
-		md:h-[25rem] lg:h-[35rem] xl:h-[45rem]" style="background-image: url('./banner.jpg');">
+		<!-- bg-[right_20%_top_30%] -->
+		<div class="h-80 bg-no-repeat bg-cover bg-center bg-top
+		md:h-[25rem] lg:h-[35rem] xl:h-[40rem]" style="background-image: url('./banner.jpg');">
 		</div>
-		<div class="absolute left-1 bottom-1  m-2 hidden md:block lg:left-[3%] lg:bottom-[5%]">
+		<div class="absolute left-1 bottom-1 m-2 hidden md:block lg:left-[3%] lg:bottom-[5%]">
+			<h1 class="hidden text-jacobs text-3xl text-left pb-16 md:block lg:text-4xl lg:pb-36 xl:text-5xl">The Basingstoke<br>Property Specialist</h1>
 			<BuyRentSellLet client:load/>
 		</div>
 	</section>
