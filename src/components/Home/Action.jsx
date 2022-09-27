@@ -1,4 +1,4 @@
-import { IoIosArrowForward } from "react-icons/io"
+import { IoIosArrowForward } from "react-icons/io/index.js"
 
 const Action = ({ link, image, title, text }) => {
   return(
