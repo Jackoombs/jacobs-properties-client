@@ -1,5 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BuyRentSellLet from "../components/Home/BuyRentSellLet"
+import Review from "../components/Home/Review.astro";
+import PropertyGrid from "../components/Property/PropertyGrid.astro";
+import TeamCarousel from "../components/Home/TeamCarousel"
+import Icon from "astro-icon"
+
+const res = await fetch("https://jacobs-server.onrender.com/properties/sales")
+const propertyList = await res.json()
+const featuredList = propertyList
+	.sort((a: Property, b: Property) => {
+		if (a.InternalSaleStatus === "For Sale - Available"
+		&& b.InternalSaleStatus === "Under offer - Available") {
+			return -1
+		}
+		if (b.InternalSaleStatus === "For Sale - Available"
+		&& a.InternalSaleStatus === "Under offer - Available") {
+			return +1
+		}
+		return 0
+	})
+	.slice(0,3)
 
 export interface Property {
 	ID: string,
@@ -22,7 +43,93 @@ export interface Image {
 
 <Layout>
 
-	<h1>Welcome to Jacobs</h1>
+	<section class="relative"  >
+		<div class="h-80 bg-no-repeat bg-cover bg-[right_20%_top_30%]
+		md:h-[25rem] lg:h-[35rem] xl:h-[45rem]" style="background-image: url('./banner.jpg');">
+		</div>
+		<div class="absolute left-1 bottom-1  m-2 hidden md:block lg:left-[3%] lg:bottom-[5%]">
+			<BuyRentSellLet client:load/>
+		</div>
+	</section>
+
+	<main>
+		<section class="flex flex-col gap-6 bg-slate-200 py-6 px-4 md:hidden">
+			<h1 class="text-jacobs text-4xl text-center">The Basingstoke Property Specialist</h1>
+			<BuyRentSellLet client:load client:media="(max-width: 768px)"/>
+		</section>
+
+		<section class="flex flex-col gap-8 py-6 px-4 text-center">
+			<div>
+				<h3 class="text-jacobs font-bold text-2xl pb-2">Why Choose us?</h3>
+				<p class="text-md">If you are looking for a knowledgeable, experienced sales and letting agency who 
+					intimialtely knows Basingstoke and the region around the town, then choose Jacobs Properties.</p>
+			</div>
+
+			<hr class="px-2 border-1 w-full border-slate-400 sm:hidden"/>
+
+			<div class="grid grid-cols-2 gap-y-8">
+				<a class="flex flex-col items-center" href="">
+					<div class="flex items-center justify-center relative rounded-full w-16 h-16 bg-jacobs2 saturate-50">
+						<img class="absolute -left-3" src="transparent.png" alt="">
+					</div>
+					<h4 class=""><strong>Transparent</strong><br>Services</h4>
+					<p class="flex items-center text-sm font-bold text-jacobs">Find out more <Icon class="w-3" name="fe:arrow-right"/></p>
+				</a>
+
+				<a class="flex flex-col items-center" href="">
+					<div class="flex items-center justify-center relative rounded-full w-16 h-16 bg-jacobs2 saturate-50">
+						<img class="absolute -left-3" src="transparent.png" alt="">
+					</div>
+					<h4 class=""><strong>Transparent</strong><br>Services</h4>
+					<p class="flex items-center text-sm font-bold text-jacobs">Find out more <Icon class="w-3" name="fe:arrow-right"/></p>
+				</a>
+
+				<a class="flex flex-col items-center" href="">
+					<div class="flex items-center justify-center relative rounded-full w-16 h-16 bg-jacobs2 saturate-50">
+						<img class="absolute -left-3" src="transparent.png" alt="">
+					</div>
+					<h4 class=""><strong>Transparent</strong><br>Services</h4>
+					<p class="flex items-center text-sm font-bold text-jacobs">Find out more <Icon class="w-3" name="fe:arrow-right"/></p>
+				</a>
+
+				<a class="flex flex-col items-center" href="">
+					<div class="flex items-center justify-center relative rounded-full w-16 h-16 bg-jacobs2 saturate-50">
+						<img class="absolute -left-3" src="transparent.png" alt="">
+					</div>
+					<h4 class=""><strong>Transparent</strong><br>Services</h4>
+					<p class="flex items-center text-sm font-bold text-jacobs">Find out more <Icon class="w-3" name="fe:arrow-right"/></p>
+				</a>
+			</div>
+		</section>
+		<section class="flex flex-col gap-3 bg-slate-200 py-6 px-4">
+			<h3 class="text-jacobs font-bold text-2xl text-center pb-2">Featured Properties</h3>
+			<PropertyGrid propertyList={featuredList} />
+		</section>
+		<section class="flex flex-col gap-3 bg-jacobs py-6 px-4">
+			<h3 class="text-offwhite font-bold text-2xl text-center pb-2">Meet the team</h3>
+			<TeamCarousel client:load />
+		</section>
+		<section class="flex flex-col gap-3 bg-slate-200 py-6 px-4">
+			<h3 class="text-jacobs font-bold text-2xl text-center pb-2">Reviews</h3>
+			<div class="flex flex-col gap-4">
+				<Review 
+					review="“As a long term overseas landlord you need to have great confidence in your managing agent. Jacobs in Basingstoke have given me that confidence from the outset, allowing me to enjoy a great life in Spain.”" 
+					author="Keith – Overseas Landlord"
+				/>
+				<Review 
+					review="“Going with Jacobs was an excellent decision. They found very good tenants and looked after any problems or maintenance issues, leaving me to get on with my life. Very happy to recommend them.”" 
+					author="Jon Smith – Landlord"
+				/>
+				<Review 
+					review="“With Jacobs Properties all the stress was taken out of the sale. Efficient, knowledgeable and enthusiastic.”" 
+					author="Home Owner – Oakley"
+				/>
+			</div>
+		</section>
+		<section class="flex flex-col gap-3 bg-jacobs py-6 px-4">
+			<h3 class="text-offwhite font-bold text-2xl text-center pb-2">FAQ</h3>
+		</section>
+	</main>
 
 </Layout>
 	
