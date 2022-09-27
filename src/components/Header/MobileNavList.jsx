@@ -4,19 +4,19 @@ const MobileNavList = ({ isOpen }) => {
 
   const navItems = [
     {
-      text: "Buying",
+      text: "Buy",
       link : "/for-sale"
     },
     {
-      text: "Renting",
+      text: "Ren",
       link : "/for-rent"
     },
     {
-      text: "Selling",
+      text: "Sell",
       link : "/"
     },
     {
-      text: "Landlords",
+      text: "Let",
       link : "/"
     },
   ]
