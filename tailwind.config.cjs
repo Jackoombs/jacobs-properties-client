@@ -4,7 +4,9 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				jacobs: "#004282"
+				jacobs: "#004282",
+				jacobs2: "#c7dd2b",
+				offwhite: "#f8fafc"
 			},
 			aspectRatio: {
 				photo: "3 / 2"
