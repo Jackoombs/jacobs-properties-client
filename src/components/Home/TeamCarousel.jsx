@@ -11,19 +11,19 @@ export default function TeamCarousel() {
   return (
     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
       <SwiperSlide>
-        <TeamProfile name="Jon Coombs" role="Managing Director" image="jon.jpg" description="Jon Coombs is a top G and is well 
+        <TeamProfile name="Jon Coombs" role="Managing Director" image="jon.png" description="Jon Coombs is a top G and is well 
         known for his impeccable style and flawless physique. He is well known in the property world and the top don of Bstoke."/>
       </SwiperSlide>
       <SwiperSlide>
-        <TeamProfile name="Jon Coombs" role="Managing Director" image="jon.jpg" description="Jon Coombs is a top G and is well 
+        <TeamProfile name="Jon Coombs" role="Managing Director" image="jon.png" description="Jon Coombs is a top G and is well 
         known for his impeccable style and flawless physique. He is well known in the property world and the top don of Bstoke."/>
       </SwiperSlide>
       <SwiperSlide>
-        <TeamProfile name="Jon Coombs" role="Managing Director" image="jon.jpg" description="Jon Coombs is a top G and is well 
+        <TeamProfile name="Jon Coombs" role="Managing Director" image="jon.png" description="Jon Coombs is a top G and is well 
         known for his impeccable style and flawless physique. He is well known in the property world and the top don of Bstoke."/>
       </SwiperSlide>
       <SwiperSlide>
-        <TeamProfile name="Jon Coombs" role="Managing Director" image="jon.jpg" description="Jon Coombs is a top G and is well 
+        <TeamProfile name="Jon Coombs" role="Managing Director" image="jon.png" description="Jon Coombs is a top G and is well 
         known for his impeccable style and flawless physique. He is well known in the property world and the top don of Bstoke."/>
       </SwiperSlide>
     </Swiper>
