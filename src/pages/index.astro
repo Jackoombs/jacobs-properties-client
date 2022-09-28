@@ -44,12 +44,12 @@ export interface Image {
 <Layout>
 
 	<section class="relative"  >
-		<!-- bg-[right_20%_top_30%] -->
-		<div class="h-80 bg-no-repeat bg-cover bg-center bg-top
+		
+		<div class="h-80 bg-no-repeat bg-cover bg-[right_20%_top_30%] md:brightness-[0.4]
 		md:h-[25rem] lg:h-[35rem] xl:h-[40rem]" style="background-image: url('./banner.jpg');">
 		</div>
-		<div class="absolute left-1 bottom-1 m-2 hidden md:block lg:left-[3%] lg:bottom-[5%]">
-			<h1 class="hidden text-jacobs text-3xl text-left pb-16 md:block lg:text-4xl lg:pb-36 xl:text-5xl">The Basingstoke<br>Property Specialist</h1>
+		<div class="absolute left-1 bottom-1 m-2 hidden md:block lg:left-20 lg:bottom-20 xl:left-28 xl:bottom-28">
+			<h1 class="hidden text-jacobs text-5xl text-left pb-16 md:block md:text-offwhite lg:pb-36 xl:text-6xl">The Basingstoke<br>Property Specialist</h1>
 			<BuyRentSellLet client:load/>
 		</div>
 	</section>
@@ -103,9 +103,11 @@ export interface Image {
 				</a>
 			</div>
 		</section>
-		<section class="flex flex-col gap-3 bg-slate-200 py-6 px-4">
-			<h3 class="text-jacobs font-bold text-2xl text-center pb-2">Featured Properties</h3>
-			<PropertyGrid propertyList={featuredList} />
+		<section class="flex justify-center gap-3 bg-slate-200 py-6 px-4">
+			<div class="w-max">
+				<h3 class="text-jacobs font-bold text-2xl text-center pb-2">Featured Properties</h3>
+				<PropertyGrid propertyList={featuredList} />
+			</div>
 		</section>
 		<section class="flex flex-col gap-3 bg-jacobs py-6 px-4">
 			<h3 class="text-offwhite font-bold text-2xl text-center pb-2">Meet the team</h3>
