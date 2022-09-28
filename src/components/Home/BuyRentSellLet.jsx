@@ -3,7 +3,7 @@ import Action from "./Action"
 
 export default function BuyRentSellLet () {
 
-  const [activeTab, setActiveTab] = useState("sell")
+  const [activeTab, setActiveTab] = useState("buy")
   const tabs = ["buy", "rent", "sell", "let"]
   const tabStyle = (tab) => {
     if (tab === activeTab) {
@@ -14,7 +14,7 @@ export default function BuyRentSellLet () {
   }
 
   return(
-    <div className="container mx-auto py-3 bg-slate-50 rounded-lg shadow-lg overflow-hidden md:min-w-[35rem] lg:py-5">
+    <div className="container mx-auto p-3 px-5 bg-slate-50 rounded-lg shadow-lg overflow-hidden lg:py-5">
       <ul className="flex justify-center pb-2 gap-1">
         {tabs.map(tab => (
           <li key={tab} onClick={() => setActiveTab(tab)}
