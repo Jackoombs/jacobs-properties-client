@@ -15,9 +15,10 @@ propertyList.sort((a: Property, b: Property) => {
   return 0
 })
 ---
-
-<ul class=" grid gap-8 justify-center lg:grid-cols-2">
-  {propertyList.map((property: Property) => 
-    <PropertyCard property={property} />
-  )}
-</ul>
+{propertyList.length &&
+  <ul class=" grid gap-8 justify-center lg:grid-cols-2">
+    {propertyList.map((property: Property) => 
+      <PropertyCard property={property} />
+    )}
+  </ul>
+}
