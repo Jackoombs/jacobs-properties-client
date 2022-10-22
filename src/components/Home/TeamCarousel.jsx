@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 import TeamProfile from "./TeamProfile";
 import { Swiper, SwiperSlide } from "swiper/react";
 // eslint-disable-next-line
