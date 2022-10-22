@@ -1,5 +1,9 @@
 import { useState } from "react"
 import Action from "./Action"
+import Buy from "../../images/buy.png"
+import Rent from "../../images/rent.png"
+import Sell from "../../images/sell.png"
+import Sell2 from "../../images/sell2.png"
 
 export default function BuyRentSellLet () {
 
@@ -24,14 +28,14 @@ export default function BuyRentSellLet () {
         ))}
       </ul>
       <div className="flex flex-col justify-center gap-4  items-center px-4 py-2 sm:flex-row sm:items-stretch md:p-0 md:gap-8 ">
-        {activeTab === "buy" && <Action link="/for-sale" image="buy.png" title="See our properties" text="Find your property"/>}
-        {activeTab === "rent" && <Action link="/for-rent" image="rent.png" title="See our properties" text="Find your property"/>}
+        {activeTab === "buy" && <Action link="/for-sale" image={Buy} title="See our properties" text="Find your property"/>}
+        {activeTab === "rent" && <Action link="/for-rent" image={Rent} title="See our properties" text="Find your property"/>}
         {activeTab === "sell" && (
           <>
-            <Action link="/for-rent" image="sell.png" title="Book a valuation" text="Get a FREE expert"/>
+            <Action link="/for-rent" image={Sell} title="Book a valuation" text="Get a FREE expert"/>
             <div className="hidden border-l-2 border-slate-400 sm:block"></div>
             <hr className="px-2 border-1 w-full border-slate-400 sm:hidden"/>
-            <Action link="/for-rent" image="sell2.png" title="Instant valuation" text="Get a FREE one online"/>
+            <Action link="/for-rent" image={Sell2} title="Instant valuation" text="Get a FREE one online"/>
           </>
         )}
         {activeTab === "let" && <Action link="/for-rent" image="let.png" title="See our properties" text="Find your property"/>}
