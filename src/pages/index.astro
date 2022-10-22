@@ -5,6 +5,8 @@ import Review from "../components/Home/Review.astro";
 import PropertyGrid from "../components/Property/PropertyGrid.astro";
 import TeamCarousel from "../components/Home/TeamCarousel"
 import Icon from "astro-icon"
+import CallToActionCard from "../components/Home/CallToActionCard.astro";
+import Transparent from "../images/transparent.png"
 import Banner from "../images/banner.jpg"
 
 const res = await fetch("https://jacobs-server.onrender.com/properties/sales")
@@ -46,8 +48,8 @@ export interface Image {
 
 	<section class="relative"  >
 		
-		<div class={`h-80 bg-no-repeat bg-cover bg-[right_20%_top_30%] md:brightness-[0.6]
-		md:h-[25rem] lg:h-[35rem] xl:h-[45rem]" style="background-image: url(${Banner});`}>
+		<div class="h-80 bg-no-repeat bg-cover bg-[right_20%_top_30%] md:brightness-[0.6]
+		md:h-[25rem] lg:h-[35rem] xl:h-[45rem]" style={`background-image: url(${Banner});`}>
 		</div>
 		<div class="absolute left-1 bottom-1 m-2 hidden md:block lg:left-20 lg:bottom-20 xl:left-28 xl:bottom-28">
 			<h1 class="hidden text-jacobs text-5xl text-left pb-16 md:block md:text-offwhite lg:pb-36 xl:text-6xl">The Basingstoke<br>Property Specialist</h1>
@@ -71,37 +73,10 @@ export interface Image {
 			<hr class="px-2 border-1 w-full border-slate-400 sm:hidden"/>
 
 			<div class="grid grid-cols-2 gap-y-8">
-				<a class="flex flex-col items-center" href="">
-					<div class="flex items-center justify-center relative rounded-full w-16 h-16 bg-jacobs2 saturate-50">
-						<img class="absolute -left-3" src="transparent.png" alt="">
-					</div>
-					<h4 class=""><strong>Transparent</strong><br>Services</h4>
-					<p class="flex items-center text-sm font-bold text-jacobs">Find out more <Icon class="w-3" name="fe:arrow-right"/></p>
-				</a>
-
-				<a class="flex flex-col items-center" href="">
-					<div class="flex items-center justify-center relative rounded-full w-16 h-16 bg-jacobs2 saturate-50">
-						<img class="absolute -left-3" src="transparent.png" alt="">
-					</div>
-					<h4 class=""><strong>Transparent</strong><br>Services</h4>
-					<p class="flex items-center text-sm font-bold text-jacobs">Find out more <Icon class="w-3" name="fe:arrow-right"/></p>
-				</a>
-
-				<a class="flex flex-col items-center" href="">
-					<div class="flex items-center justify-center relative rounded-full w-16 h-16 bg-jacobs2 saturate-50">
-						<img class="absolute -left-3" src="transparent.png" alt="">
-					</div>
-					<h4 class=""><strong>Transparent</strong><br>Services</h4>
-					<p class="flex items-center text-sm font-bold text-jacobs">Find out more <Icon class="w-3" name="fe:arrow-right"/></p>
-				</a>
-
-				<a class="flex flex-col items-center" href="">
-					<div class="flex items-center justify-center relative rounded-full w-16 h-16 bg-jacobs2 saturate-50">
-						<img class="absolute -left-3" src="transparent.png" alt="">
-					</div>
-					<h4 class=""><strong>Transparent</strong><br>Services</h4>
-					<p class="flex items-center text-sm font-bold text-jacobs">Find out more <Icon class="w-3" name="fe:arrow-right"/></p>
-				</a>
+				<CallToActionCard />
+				<CallToActionCard />
+				<CallToActionCard />
+				<CallToActionCard />
 			</div>
 		</section>
 		<section class="flex justify-center gap-3 bg-slate-200 py-6 px-4">
