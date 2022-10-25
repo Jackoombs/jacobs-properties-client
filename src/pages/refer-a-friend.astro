@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Form from "../components/General/ReferAFriendForm"
+import PageTitle from "../components/General/PageTitle.astro";
+---
+
+<Layout>
+
+  <main class="grow pt-28 bg-slate-300">
+    <div class="mx-auto w-max flex flex-col justify-center items-center p-20 bg-slate-50 shadow-lg rounded-lg">
+      <PageTitle title="Refer A Friend!" />
+      <Form client:idle />
+    </div>
+  </main>
+</Layout>
